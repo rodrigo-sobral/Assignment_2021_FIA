@@ -11,8 +11,8 @@ public class RobotUnit : MonoBehaviour {
     public Text countText;
     public float startTime;
     public float timeElapsed = 0.0f;
-    public ResourceDetectorScript resourcesDetector;
-    public BlockDetectorScript blockDetector;
+    public ResourceDetectorScript resourcesDetector; //SENSOR para resources
+    public BlockDetectorScript blockDetector; //SENSOR para walls
     private List<Tuple<float, float>> listAngleStr;
     public bool debugMode = true;
     protected int maxObjects = 0;
@@ -64,6 +64,7 @@ public class RobotUnit : MonoBehaviour {
     }
 
     public void applyForce(float angle, float strength) {
+        //add tuple com info (angle,streght) dos vários sensores à lista 
         listAngleStr.Add(new Tuple<float, float>(angle, strength));
     }
 

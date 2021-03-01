@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceDetectorScript : MonoBehaviour {
-    public float angleOfSensors = 10f;
-    public float rangeOfSensors = 0.1f;
+    public float angleOfSensors = 10f; //parametros a variar
+    /*definir 10 neste par^ametro
+(valor por defeito no sensor fornecido) implica que os 360 graus em volta
+do sensor sejam divididos em raios a cada 10 graus (36 raios igualmente
+espacados em redor do sensor).*/
+    public float rangeOfSensors = 15f; //parametros a variar
     protected Vector3 initialTransformUp;
     protected Vector3 initialTransformFwd;
-    public float strength;
-    public float angle;
+    public float strength; //to closest resource
+    public float angle; ////to closest resource
     public int numObjects;
     public bool debug_mode;
 
