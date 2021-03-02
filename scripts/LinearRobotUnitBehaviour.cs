@@ -5,9 +5,11 @@ using UnityEngine;
 //este script está referenced ao Body
 public class LinearRobotUnitBehaviour : RobotUnit {
     //LinearRobotUnitBehaviour extends RobotUnit 
-    public float weightResource; //está definido a 1 no unity
+    public float weightResource=2.0f; //prioridade
     public float resourceValue;
     public float resouceAngle;
+
+    public float weightWall = -0.5f; //prioridade
     public float wallValue;
     public float wallAngle;
    
@@ -22,11 +24,11 @@ public class LinearRobotUnitBehaviour : RobotUnit {
         applyForce(resouceAngle, resourceValue); // go towards // apply to the ball
 
         wallAngle = blockDetector.GetAngleToClosestWall();
-        resourceValue = 1 * blockDetector.GetLinearOuput();
+        wallValue = weightWall * blockDetector.GetLinearOuput();
         Debug.Log("wall_sensor_input:");
         Debug.Log(wallAngle);
         Debug.Log(wallValue);
-        applyForce(wallAngle, resourceValue);
+        applyForce(wallAngle, wallValue); 
         //TODO: obter os dados do sensor dos blocos para obter o vetor a mandar para o "applyForce"
 
         

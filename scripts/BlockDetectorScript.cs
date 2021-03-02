@@ -14,8 +14,6 @@ espacados em redor do sensor).*/
     protected Vector3 initialTransformUp;
     protected Vector3 initialTransformFwd;
     public float strength; //to closest wall
-    public float varying_strenght=2.2f; //Increase this parameter value para atenuar a energia com q o boneco se afasta das paredes
-    //nota: o varying_streght do boneco em relação aos resources é = 1, logo o varying_strenght para as paredes deve ser superior!
     public float angle; //to closest wall
     public int numObjects;
     public bool debug_mode;
@@ -34,7 +32,7 @@ espacados em redor do sensor).*/
 
         if (wall != null) {
             angle = wall.angle;
-            strength = -(1.0f / (wall.distance +varying_strenght)); //está a ser calculada c/ mesma formula q o resource (mas negativa)
+            strength = 1.0f / (wall.distance +1); //está a ser calculada c/ mesma formula q o resource 
         }
     }
 
@@ -81,7 +79,7 @@ espacados em redor do sensor).*/
 
                 if (hit.transform.gameObject.CompareTag(objectTag)) {
                     if (debug_mode) {
-                        Debug.DrawRay(this.transform.position, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, Color.red);
+                        Debug.DrawRay(this.transform.position, Quaternion.AngleAxis((-angleOfSensors * i), initialTransformUp) * initialTransformFwd * hit.distance, Color.green);
                     }
                     ObjectInfo info = new ObjectInfo(hit.distance, angleOfSensors * i + 90);
                     objectsInformation.Add(info);
