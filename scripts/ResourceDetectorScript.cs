@@ -17,6 +17,19 @@ espacados em redor do sensor).*/
     public int numObjects;
     public bool debug_mode;
 
+    //activation functions limits
+    public float strengthLimitLow = 0.0f; //limite inferior p/ eixo x
+    public float strengthLimitSup = 1.0f; //limite superior p/ eixo x
+    public float outLimitLow = 0.0f; //limite inferior p/ eixo y
+    public float outLimitSup = 1.0f; //limite superior p/ eixo y
+
+
+    //gaussian function parameters:
+    public float gaussMicro = 0.5f; //from enunciado
+    public float gaussSigma = 0.12f; //from enunciado
+
+
+
     // Start is called before the first frame update
     void Start() {
         initialTransformUp = this.transform.up;
@@ -45,19 +58,71 @@ espacados em redor do sensor).*/
 
     public float GetLinearOuput()
     {
+        if (strength < strengthLimitLow) //limite inferior strenght
+        {
+            strength = strengthLimitLow;
+        }
+        else if (strength > strengthLimitSup) //limite superior strenght
+        {
+            strength = strengthLimitSup;
+        }
+        if (strength < outLimitLow)
+        {
+            return outLimitLow;
+        }
+        else if (strength > outLimitSup)
+        {
+            return outLimitSup;
+        }
         return strength;
     }
 
     public virtual float GetGaussianOutput()
     {
-        // YOUR CODE HERE
-        throw new NotImplementedException();
+        float y;
+        if (strength < strengthLimitLow) //limite inferior strenght
+        {
+            strength = strengthLimitLow;
+        }
+        else if (strength > strengthLimitSup) //limite superior strenght
+        {
+            strength = strengthLimitSup;
+        }
+        y= (float)((1 / (gaussSigma * Math.Sqrt(2 * Math.PI))) * Math.Exp(-0.5 * (((strength - gaussMicro) * (strength - gaussMicro)) / (gaussSigma * gaussSigma))));
+        
+        if (y < outLimitLow)
+        {
+            y=outLimitLow;
+        }
+        else if (y > outLimitSup)
+        {
+            y=outLimitSup;
+        }
+        return y;
     }
 
     public virtual float GetLogaritmicOutput()
     {
-        // YOUR CODE HERE
-        throw new NotImplementedException();
+        float y;
+        if (strength < strengthLimitLow) //limite inferior strenght
+        {
+            strength = strengthLimitLow;
+        }
+        else if (strength > strengthLimitSup) //limite superior strenght
+        {
+            strength = strengthLimitSup;
+        }
+        y = (float)-Math.Log(strength); //negative natural (base e) logarithm!
+
+        if (y < outLimitLow)
+        {
+            y = outLimitLow;
+        }
+        else if (y > outLimitSup)
+        {
+            y = outLimitSup;
+        }
+        return y;
     }
 
 

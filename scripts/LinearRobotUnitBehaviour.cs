@@ -12,19 +12,53 @@ public class LinearRobotUnitBehaviour : RobotUnit {
     public float weightWall = -0.5f; //prioridade
     public float wallValue;
     public float wallAngle;
-   
-    
+
+    public bool resourceLinear=true; 
+    public bool resourceGaussian = false;
+    public bool resourceLogaritmic = false;
+
+    public bool wallLinear = true;
+    public bool wallGaussian = false;
+    public bool wallLogaritmic = false;
+
+
     void Update() {
         // get sensor data
         resouceAngle = resourcesDetector.GetAngleToClosestResource();
-        resourceValue = weightResource * resourcesDetector.GetLinearOuput();
+        if (resourceGaussian)
+        {
+            resourceValue = weightResource * resourcesDetector.GetGaussianOutput();
+        }
+        else if (resourceLogaritmic)
+        {
+            resourceValue = weightResource * resourcesDetector.GetLogaritmicOutput();
+        }
+        else
+        {
+            resourceValue = weightResource * resourcesDetector.GetLinearOuput();
+        }
+        
         Debug.Log("resource_sensor_input:");
         Debug.Log(resouceAngle);
         Debug.Log(resourceValue);
         applyForce(resouceAngle, resourceValue); // go towards // apply to the ball
-
+        
         wallAngle = blockDetector.GetAngleToClosestWall();
-        wallValue = weightWall * blockDetector.GetLinearOuput();
+        
+        if (wallGaussian)
+        {
+            wallValue = weightWall * blockDetector.GetGaussianOutput();
+        }
+        else if (wallLogaritmic)
+        {
+            wallValue = weightWall * blockDetector.GetLogaritmicOutput();
+        }
+        else
+        {
+            wallValue = weightWall * blockDetector.GetLinearOuput();
+            Debug.Log(blockDetector.GetLinearOuput());
+        }
+        
         Debug.Log("wall_sensor_input:");
         Debug.Log(wallAngle);
         Debug.Log(wallValue);
