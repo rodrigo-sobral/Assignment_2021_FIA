@@ -60,7 +60,7 @@ public class RobotUnit : MonoBehaviour {
         
         string minutes = ((int)(timeElapsed / 60)).ToString();
         string seconds = (timeElapsed % 60).ToString("f0");
-        countText.text = "Resources Gathered: " + resourcesGathered.ToString() + "/" + maxObjects + "\nTime Elapsed: " + minutes + ":" + seconds; //start
+        countText.text = "Resources Gathered: " + resourcesGathered.ToString() + "/" + maxObjects + "\nTime Elapsed: " + minutes + ":" + seconds + "\nSpeed: "+ resourcesDetector.strength; //start
     }
 
     public void applyForce(float angle, float strength) {

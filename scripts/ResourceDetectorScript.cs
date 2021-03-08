@@ -56,88 +56,47 @@ espacados em redor do sensor).*/
     }
 
 
-    public float GetLinearOuput()
-    {
-        if (strength < strengthLimitLow) //limite inferior strenght
-        {
-            strength = strengthLimitLow;
-        }
-        else if (strength > strengthLimitSup) //limite superior strenght
-        {
-            strength = strengthLimitSup;
-        }
-        if (strength < outLimitLow)
-        {
-            return outLimitLow;
-        }
-        else if (strength > outLimitSup)
-        {
-            return outLimitSup;
-        }
+    public float GetLinearOuput() {
+        if (strength < strengthLimitLow) strength = strengthLimitLow;       //limite inferior strenght
+        else if (strength > strengthLimitSup) trength = strengthLimitSup;   //limite superior strenght
+        
+        if (strength < outLimitLow) return outLimitLow;
+        else if (strength > outLimitSup) return outLimitSup;
         return strength;
     }
 
-    public virtual float GetGaussianOutput()
-    {
+    public virtual float GetGaussianOutput() {
         float y;
-        if (strength < strengthLimitLow) //limite inferior strenght
-        {
-            strength = strengthLimitLow;
-        }
-        else if (strength > strengthLimitSup) //limite superior strenght
-        {
-            strength = strengthLimitSup;
-        }
+        if (strength < strengthLimitLow) strength = strengthLimitLow;       //limite inferior strenght
+        else if (strength > strengthLimitSup) strength = strengthLimitSup;  //limite superior strenght
+            
         y= (float)((1 / (gaussSigma * Math.Sqrt(2 * Math.PI))) * Math.Exp(-0.5 * (((strength - gaussMicro) * (strength - gaussMicro)) / (gaussSigma * gaussSigma))));
         
-        if (y < outLimitLow)
-        {
-            y=outLimitLow;
-        }
-        else if (y > outLimitSup)
-        {
-            y=outLimitSup;
-        }
+        if (y < outLimitLow) y=outLimitLow;
+        else if (y > outLimitSup) y=outLimitSup;
         return y;
     }
 
-    public virtual float GetLogaritmicOutput()
-    {
+    public virtual float GetLogaritmicOutput() {
         float y;
-        if (strength < strengthLimitLow) //limite inferior strenght
-        {
-            strength = strengthLimitLow;
-        }
-        else if (strength > strengthLimitSup) //limite superior strenght
-        {
-            strength = strengthLimitSup;
-        }
+        if (strength < strengthLimitLow) strength = strengthLimitLow;       //limite inferior strenght
+        else if (strength > strengthLimitSup) strength = strengthLimitSup;  //limite superior strenght
+
         y = (float)-Math.Log(strength); //negative natural (base e) logarithm!
 
-        if (y < outLimitLow)
-        {
-            y = outLimitLow;
-        }
-        else if (y > outLimitSup)
-        {
-            y = outLimitSup;
-        }
+        if (y < outLimitLow) y = outLimitLow;
+        else if (y > outLimitSup) y = outLimitSup;
         return y;
     }
 
 
-    public ObjectInfo[] GetVisiblePickups()
-    {
+    public ObjectInfo[] GetVisiblePickups() {
         return (ObjectInfo[]) GetVisibleObjects("Pickup").ToArray();
     }
 
-    public ObjectInfo GetClosestPickup()
-    {
+    public ObjectInfo GetClosestPickup() {
         ObjectInfo [] a = (ObjectInfo[])GetVisibleObjects("Pickup").ToArray();
-        if(a.Length == 0)
-        {
-            return null;
-        }
+        if(a.Length == 0) return null;
         return a[a.Length-1];
     }
 
@@ -163,16 +122,12 @@ espacados em redor do sensor).*/
                 }
             }
         }
-
         objectsInformation.Sort();
-
         return objectsInformation;
     }
 
 
-    private void LateUpdate()
-    {
+    private void LateUpdate() {
         this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, this.transform.parent.rotation.z * -1.0f);
-
     }
 }
