@@ -38,9 +38,9 @@ log | linear
 
 funcao de ativacao resource | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | gauss micro | gauss sigma | tempo(s)
 -- | -- | -- | -- | -- | -- | -- | --
-linear | 0 | 0.01 | 0 | 0.25 | -- | -- | 11
+linear | 0.1 | 0.2 | 0 | 0.02 | -- | -- | 7
 gauss | 0.1 | 0.2 | 0 | 0.03 | 0.5 | 0.12 | 7
-log |
+log | 0.1 | 0.2 | 0 | 0.02 | -- | -- | 7
 
 
 ## map2b
