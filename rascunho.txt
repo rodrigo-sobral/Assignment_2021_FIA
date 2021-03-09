@@ -1,0 +1,6 @@
+MAP 2b
+linear linear wresourse=2 wwall=-0.5 0-1 0-1 t=0.32sec
+
+wall c/ log; resource c/ linear; wresourse=2 wwall=-0.5; wall lim_stren=0-1,lim_out=0-0.5; resource lim_stren=0-1,lim_out=0-1; 0.28sec
+
+wall c/ linear; resource c/ gauss(micro=0.5,sig=0.12); wresourse=2 wwall=-0.5; wall lim_stren=0.2-1,lim_out=0-1; resource lim_stren=0-0.6,lim_out=0.2-0.3; 0.24sec
