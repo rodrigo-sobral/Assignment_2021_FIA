@@ -34,11 +34,13 @@ log | linear
 
 ## map2a
 
-- | funcao de ativacao resource | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | tempo(s)
--- | -- | -- | -- | -- | -- | --
--- | linear | 0 | 0.01 | 0 | 0.25 | 11
--- | gauss | 
--- | log |
+`Nota: Aqui não temos walls, logo só precisamos da função de ativação dos sensores de recursos`
+
+funcao de ativacao resource | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | gauss micro | gauss sigma | tempo(s)
+-- | -- | -- | -- | -- | -- | -- | --
+linear | 0 | 0.01 | 0 | 0.25 | -- | -- | 11
+gauss | 0.1 | 0.2 | 0 | 0.025 | 0.5 | 0.12 | 8
+log |
 
 
 ## map2b
