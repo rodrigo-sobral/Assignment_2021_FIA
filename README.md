@@ -65,7 +65,7 @@ gauss / log
 |
 log / log
 log / gauss
-log / linear
+log / linear | -0.5 / 2 | 10 / 10 | 10 / 50 | 0 / 0 | 0.5 / 1 | 0 / 0 | 1 / 1 | -- / -- | -- / -- | 28
 
 
 ___
