@@ -9,28 +9,28 @@ linear / gauss |
 linear / log | 
 |
 gauss / gauss | 
-gauss / linear | 0.75 / -0.5 | 0.1 / 0.1 | 1 / 1 | 0 / 0.1 | 1 / 1 | 0.5 / -- | 0.12 / -- | 13
+gauss / linear | -0.5 / 0.75 | 0.1 / 0.1 | 1 / 1 | 0 / 0.1 | 1 / 1 | 0.5 / -- | 0.12 / -- | 13
 gauss / log | 
 |
 log / log | 
 log / gauss | 
-log / linear | 0.75 / -0.5 | 0.1 / 0.1 | 1 / 1 | 0 / 0.1 | 1 / 1 | -- | -- | 9
+log / linear | -0.5 / 0.75 | 0.1 / 0.1 | 1 / 1 | 0 / 0.1 | 1 / 1 | -- | -- | 9
 
 ## map1b
 
-funcao de ativacao w | funcao de ativacao r | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | tempo
--- | -- | -- | -- | -- | -- | --
-linear | linear | 0 | 1 | 0 | 1 | 0.32
-linear | gauss
-linear | log
+func. ativacao w / r | weight w / r | lim. inf. out(y) w / r | lim. sup. out(y) w / r | lim. inf. stren(x) w / r | lim. sup. stren(x) w / r | gauss micro w / r | gauss sigma w / r | tempo (s)
+-- | -- | -- | -- | -- | -- | -- | -- | -- 
+linear / linear | -0.6 / 2.5 | 0 / 0 | 1 / 1 | 0 / 0 | 1 / 1 | -- | -- | 10 
+linear / gauss | -0.5 / 2 | 0 / 0 | 0.4 / 1 | 0 / 0 | 1 / 1 | 0.6/- | 0.12/- | 10 
+linear / log | 
 |
-gauss | gauss
-gauss | linear
-gauss | log
+gauss / gauss | -0.5 / 2 | 0 / 0 | 0.6 / 1 | 0 / 0 | 1 / 1 | 0.7 / 0.3 | 0.12 / 0.12  | 9 
+gauss / linear | | |  |  |  |  |  | 
+gauss / log | 
 |
-log | log
-log | gauss
-log | linear
+log / log | 
+log / gauss | 
+log / linear |  |  | |  |  |  |  | 
 
 ## map2a
 
