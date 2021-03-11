@@ -55,7 +55,7 @@ ___
 
 func. ativacao w / r | weight w / r | angle sens w / r | range sens w / r | lim. inf. out(y) w / r | lim. sup. out(y) w / r | lim. inf. stren(x) w / r | lim. sup. stren(x) w / r | gauss micro w / r | gauss sigma w / r | tempo (s)
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
-linear / linear | -0.85 / 2.5 | 5 / 10 | 10 / 100 | 0 / 0.1 | 1 / 2 | 0 / 0.1 | 1 / 2 | -- / -- | -- / -- | 18
+linear / linear | -0.85 / 2.5 | 5 / 10 | 10 / 100 | 0 / 0.1 | 1 / 1 | 0 / 0.1 | 1 / 1 | -- / -- | -- / -- | 18
 linear / gauss
 linear / log
 |
