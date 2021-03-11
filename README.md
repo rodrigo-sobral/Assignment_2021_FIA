@@ -28,7 +28,7 @@ gauss / gauss | -0.5 / 2 | 0 / 0 | 0.6 / 1 | 0 / 0 | 1 / 1 | 0.7 / 0.3 | 0.12 / 
 gauss / linear | | |  |  |  |  |  | 
 gauss / log | 
 |
-log / log | 
+log / log | -0.5 / 3 | 0 / 0.15 | 0.6 / 1 | 0.4 / 0.25 | 1 / 1 | --/ -- | -- / --  | 8
 log / gauss | 
 log / linear |  |  | |  |  |  |  | 
 
