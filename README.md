@@ -40,13 +40,13 @@ log / linear | -0.5 / 2 | 10 / 10 | 10 / 50 | 0.25 / 0 | 1 / 1   | 0 / 0      | 
 ___
 ## map2a
 
-`Nota: Aqui não temos ws, logo só precisamos da função de ativação dos sensores de recursos (weight w=0 ; weight r=1)`
+`Nota: Aqui não temos paredes, logo só precisamos da função de ativação, limites e limiares relativos aos sensores de recursos (weight w=0 ; weight r=1)`
 
-funcao de ativacao r | weight w / r | angle sens w / r | range sens w / r | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | gauss micro | gauss sigma | tempo(s)
+funcao de ativacao | weight | angle sens | range sens | limite inf out(y) | limite sup out(y) | limite inf stren(x) | limite sup stren(x) | gauss micro | gauss sigma | tempo(s)
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
-linear | 0 / 1 | 10 / 10 | 10 / 30 | 0.1 | 0.2 | 0 | 0.02 | --   | --    | 7
-gauss  | 0 / 1 | 10 / 10 | 10 / 30 | 0.1 | 0.2 | 0 | 0.03 | 0.5  | 0.12  | 7
-log    | 0 / 1 | 10 / 10 | 10 / 30 | 0.1 | 0.2 | 0 | 0.02 | --   | --    | 7
+linear | 1 | 10 | 30 | 0.1 | 0.2 | 0 | 0.02 | --   | --    | 7
+gauss  | 1 | 10 | 30 | 0.1 | 0.2 | 0 | 0.03 | 0.5  | 0.12  | 7
+log    | 1 | 10 | 30 | 0.1 | 0.2 | 0 | 0.02 | --   | --    | 7
 
 
 
@@ -69,7 +69,7 @@ log / linear | -0.5 / 2   | 10 / 10 | 10 / 50  | 0.01 / 0 | 0.5 / 1   | 0 / 0   
 
 
 ___
-## map_gus
+## extra_map
 
 func. ativacao w / r | weight w / r | angle sens w / r | range sens w / r | lim. inf. out(y) w / r | lim. sup. out(y) w / r | lim. inf. stren(x) w / r | lim. sup. stren(x) w / r | gauss micro w / r | gauss sigma w / r | tempo (s)
 -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | --
