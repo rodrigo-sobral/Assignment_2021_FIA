@@ -1,0 +1,19 @@
+mapa: Evolving-Defense
+
+populalation, simultaneous simulations: 75
+tournament size: 75
+max simulation time: 15
+
+funcao de aptidao red: GuardaRedes
+
+random ball position: no
+random seed: no
+change positions every: no
+
+Mutation method: gaussian
+mutation prob.: 0.05
+crossover prob.: 0.6
+elitisc: off
+
+number of generations: 300
+export every n generations: 5
