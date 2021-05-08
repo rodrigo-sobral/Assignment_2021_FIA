@@ -1,0 +1,13 @@
+mapa: Evolving-ControlTheBallToAdversaryGoal
+populalation, simultaneous simulations: 35
+tournament size: 35
+max simulation time: 30
+funcao de aptidao red: Atacante2
+random ball position: no
+Mutation method: gaussian
+mutation prob.: 0.1
+crossover prob.: 0.7
+number of generations: 350
+
+
+
