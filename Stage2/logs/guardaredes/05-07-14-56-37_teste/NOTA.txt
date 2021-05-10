@@ -1,18 +1,21 @@
-mapa: Evolving-Defense
+mapa: Evolving-OnevsOne
 
 populalation, simultaneous simulations: 75
 tournament size: 75
-max simulation time: 15
+max simulation time: 30
 
-funcao de aptidao red: GuardaRedes
+funcao de aptidao red: atacante 2
+funcao de aptidao red: guardaredes
 
-random ball position: yes
-random seed: 20
-change positions every: 25
+random ball position: no
 
 Mutation method: gaussian
-mutation prob.: 0.05
-crossover prob.: 0.6
+mutation prob. red: 0.1
+crossover prob. red: 0.7
+mutation prob. blue: 0.05
+crossover prob. blue: 0.6
 
 number of generations: 1000
-export every n generations: 5
+export every n generations: 10
+
+path from folders: standarts de ambos os agentes
