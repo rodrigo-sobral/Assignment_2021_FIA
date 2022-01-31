@@ -11,8 +11,8 @@ ___
 ## **Contributors** :sparkles:
 
 <html><i><b> Licenciatura em Engenharia Informática - Universidade de Coimbra<br>
-Fundamentos de Inteligência Artificial - 2019/2020 <br>
-Coimbra, 31 de dezembro de 2021
+Fundamentos de Inteligência Artificial - 2020/2021 <br>
+Coimbra, 16 de maio de 2021
 </b></i></html>
 
 :mortar_board: *[Eduardo Cruz](https://github.com/eduardoffcruz)*
